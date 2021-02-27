@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+.App {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    color:#0D0D0D;
+    min-height: 100vh;
+    background-color: #F2F2F2;
+}
+
+header{
+    height: 5vh;
+    background-color: #F29F05;
+    width: 100%;
+}
+
+.inicio{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 95vh;
+    width: 100%;
+}
+
+.buscador{
+    background-color: #F2CE16;
+    width: 50%;
+    height: 30vh;
+}
+
+.resultados-busqueda{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+}
+
+.contenedor-busquedas{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Rubik', sans-serif;
+    width:100%;
+    overflow-y: auto;
+    color: #0D0D0D;
+}
+
+.busqueda-peliculas-individual{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 95%;
+    height:20vh;
+    overflow:hidden;
+    cursor: pointer;
+    margin: 0.5em 0;
+    box-shadow: 4px 4px 8px #0D0D0D;
+    border-radius: 9px;
+    transition: 0.5s;
+    position: relative;
+    right: 0;
+    background-color: #F2F2F2;
+    color: #0D0D0D;
+}
+
+.busqueda-peliculas-individual:hover{
+    position: relative;
+    right:-3px;
+    box-shadow: 3px 10px 10px #0D0D0D;
+}
+
+.busqueda-con-imagen{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.contenedor-imagen-busqueda-individual{
+    width: 13.5%;
+}
+
+.contenedor-imagen-busqueda-individual  img{
+    width: 100%;
+    height: 100%;
+}
+
+.contenedor-texto-busqueda-individual{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    width: 86.5%;
+    padding: 0 1em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.busqueda-titulo-pelicula{
+    padding-bottom: 1em;
+}
+
+.viendo-pelicula{
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    height: 70vh;
+}
+
+.datos-pelicula{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Rubik', sans-serif;
+    text-align: left;
+    font-size: 120%;
+    padding: 0.5em;
+    color: #F2CE16;
+    background-color: #0D0D0D;
+    width: 100%;
+}
+
+.fondo-caratula-pelicula{
+    position: absolute;
+    left:0;
+    width: 70em;
+    height: 69vh;
+    z-index: 3;
+    opacity: 0.1;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.contenedor-imagen-datos-pelicula{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+}
+
+.contenedor-imagen-datos-pelicula img{
+    width: 100%;
+}
+
+.contenedor-informacion-datos-pelicula{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1em;
+    width: 70%;
+}
+
+.titulo{
+    font-size: 190%;
+}
+
+.fecha-estreno{
+    text-decoration: underline;
+    padding-bottom: 0.5em;
+}
+
+.genero{
+    margin-right: 2em;
+    font-size: 120%;
+}
+
+.sinopsis{
+    margin: 0.8em 0;
+    font-size: 130%;
+}
+
+.sinopsis span{
+    font-size: 65%;
+}
+
+.peliculas-populares{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.pelicula-popular{
+    background-color: #F27A5E;
+    border: solid 3px #D93B3B;
+    color: #022E40;
+    margin: 0.5em;
+    cursor: pointer;
+    padding:0.5em;
+}
+
+.pelicula-popular img{
+    width: 50%;
+}
