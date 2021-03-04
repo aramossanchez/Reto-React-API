@@ -1,10 +1,12 @@
 const estadoInicial = {
     PeliculaParaMostrar:{},
     PeliculasPopulares:[],
-    BusquedaDePeliculas:[],
+    BusquedaDePeliculas:"",
+    GenerosPeliculas:"",
     ViendoInicio:true,
     ViendoBusqueda:false,
     ViendoPelicula: false,
+    VerBotonVolver: false,
 };
 
 const statePersistance = () => {
@@ -49,17 +51,16 @@ function reducer (state = statePersistance(), action){
         case 'GUARDAR_BUSQUEDA_EN_ESTADO':       
             return{
                 ...state,
-                BusquedaDePeliculas:[
-                    ...state.BusquedaDePeliculas,
-                    {
-                        id: action.datosPelicula.id,
-                        title:action.datosPelicula.title,
-                        original_title:action.datosPelicula.original_title,
-                        overview:action.datosPelicula.overview,
-                        poster_path:action.datosPelicula.poster_path,
-                    }
-                ] 
+                BusquedaDePeliculas: action.datosPelicula
             }
+
+        case 'GUARDAR_GENEROS_PELICULAS':
+            return{
+                ...state,
+                GenerosPeliculas: action.generos
+            }    
+
+
 
         case 'BORRAR_RESULTADOS_BUSQUEDA_ESTADO':       
             return{
@@ -102,6 +103,19 @@ function reducer (state = statePersistance(), action){
                 ...state,
                 ViendoPelicula:true, 
             }    
+
+        case 'VER_BOTON_VOLVER_TRUE':
+            return{
+                ...state,
+                VerBotonVolver:true,
+            }
+
+        case 'VER_BOTON_VOLVER_FALSE':
+            return{
+                ...state,
+                VerBotonVolver:false,
+            }
+            
         default:
             return state;
     }

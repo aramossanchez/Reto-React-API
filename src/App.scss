@@ -6,31 +6,158 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    color:#0D0D0D;
+    color:#16193B;
     min-height: 100vh;
-    background-color: #F2F2F2;
+    background-color: #7FB2F0;
 }
 
 header{
+    position: relative;
     height: 5vh;
-    background-color: #F29F05;
+    background-color: #35478C;
     width: 100%;
+    img{
+        height: 100%;
+    }
 }
+
+header img[alt="Volver"]{
+    position: absolute;
+    left: 1em;
+}
+
+header img:hover{
+    cursor: pointer;
+}
+
+
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+INICIO
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 .inicio{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: 95vh;
     width: 100%;
+    position: relative;
+}
+
+.inicio img{
+    position: absolute;
+    top:-40vh;
+    -webkit-transform:rotate(2.5deg);
+    -moz-transform:rotate(2.5deg); 
+    -o-transform:rotate(2.5deg);
+    height: 80vh;
+    animation-duration: 8s;
+    animation-name: moviendo;
+    animation-iteration-count: infinite;
+}
+
+.inicio img[alt="Cuerda-izq"]{
+    left:15%;
+}
+
+.inicio img[alt="Cuerda-der"]{
+    left:45%;
+}
+
+@keyframes moviendo {
+    from {
+        -webkit-transform:rotate(2.5deg);
+        -moz-transform:rotate(2.5deg); 
+        -o-transform:rotate(2.5deg);
+    }
+
+    50%{
+        -webkit-transform:rotate(-2.5deg);
+        -moz-transform:rotate(-2.5deg); 
+        -o-transform:rotate(-2.5deg);
+    }
+
+    to {
+        -webkit-transform:rotate(2.5deg);
+        -moz-transform:rotate(2.5deg); 
+        -o-transform:rotate(2.5deg);
+    }
 }
 
 .buscador{
-    background-color: #F2CE16;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ADD5F7;
+    border-radius: 4em;
     width: 50%;
-    height: 30vh;
+    height: 20vh;
+    animation-duration: 8s;
+    animation-name: colgando;
+    animation-iteration-count: infinite;
+    position: relative;
+    left: -5em;
 }
+
+.buscador a{
+    color: #16193B;
+}
+
+.buscador a:visited{
+    color: #16193B;
+}
+
+.buscador a:hover{
+    color: #16193B;
+}
+
+@keyframes colgando {
+    from {
+        left: -1em;
+    }
+
+    50%{
+        left: 1em;
+    }
+
+    to {
+        left: -1em;
+    }
+}
+
+.titulo-buscador{
+    padding-bottom: 0.75em;
+    text-align: center;
+    font-size: 180%;
+    font-weight: bold;
+}
+
+.contenedor-input{
+    input{
+        all: unset;
+        border-radius: 2em;
+        padding: 0.5em;
+        width: 80%;
+        text-align: left;
+        opacity: 0.8;
+        color: #ADD5F7;
+        background-color: #16193B;
+    }
+}
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+RESULTADOS DE BUSQUEDA
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 .resultados-busqueda{
     display: flex;
@@ -44,7 +171,7 @@ header{
     font-family: 'Rubik', sans-serif;
     width:100%;
     overflow-y: auto;
-    color: #0D0D0D;
+    color: #16193B;
 }
 
 .busqueda-peliculas-individual{
@@ -56,19 +183,20 @@ header{
     overflow:hidden;
     cursor: pointer;
     margin: 0.5em 0;
-    box-shadow: 4px 4px 8px #0D0D0D;
+    box-shadow: 4px 4px 8px #16193B;
     border-radius: 9px;
     transition: 0.5s;
     position: relative;
     right: 0;
-    background-color: #F2F2F2;
-    color: #0D0D0D;
+    background-color: #ADD5F7;
+    color: #16193B;
+    position: relative;
 }
 
 .busqueda-peliculas-individual:hover{
     position: relative;
     right:-3px;
-    box-shadow: 3px 10px 10px #0D0D0D;
+    box-shadow: 3px 10px 10px #16193B;
 }
 
 .busqueda-con-imagen{
@@ -93,39 +221,73 @@ header{
     justify-content: center;
     text-align: left;
     width: 86.5%;
-    padding: 0 1em;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .busqueda-titulo-pelicula{
-    padding-bottom: 1em;
+    padding:0 1em 0.25em 1em;
+    font-weight: bold;
 }
+
+
+.busqueda-genero{
+    padding:0 1em 1em 1em;
+    text-decoration: underline;
+}
+
+.busqueda-genero span{
+    padding-right: 0.2em;
+}
+
+.busqueda-overview{
+    padding:0 1em;
+    width: 100%;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.contenedor-popularidad{
+    padding: 0 1em;
+    color: #ADD5F7;
+    position: absolute;
+    bottom:0;
+    width: 100%;
+    background-color: #35478C;
+}
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+VER DATOS PELICULA
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 .viendo-pelicula{
     display: flex;
     flex-direction: row;
-    width: 70%;
+    width: 100%;
     height: 70vh;
 }
-
 .datos-pelicula{
     position: relative;
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     font-family: 'Rubik', sans-serif;
     text-align: left;
     font-size: 120%;
     padding: 0.5em;
-    color: #F2CE16;
-    background-color: #0D0D0D;
+    color: #ADD5F7;
+    background-color: #16193B;
     width: 100%;
 }
 
 .fondo-caratula-pelicula{
     position: absolute;
     left:0;
-    width: 70em;
+    width: 100%;
     height: 69vh;
     z-index: 3;
     opacity: 0.1;
@@ -137,7 +299,8 @@ header{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 30%;
+    align-items: center;
+    width: 20%;
 }
 
 .contenedor-imagen-datos-pelicula img{
@@ -145,11 +308,13 @@ header{
 }
 
 .contenedor-informacion-datos-pelicula{
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 1em;
-    width: 70%;
+    width: 50%;
+    margin-left: 5%;
 }
 
 .titulo{

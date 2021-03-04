@@ -3,9 +3,10 @@ import { connect } from 'react-redux';
 import './App.scss';
 import axios from 'axios';
 import { guardarPeliculaEnEstado } from './redux/actions';
+import Inicio from './components/Inicio.jsx';
 import VerDatosPelicula from './components/verDatosPelicula.jsx';
-import Buscador from './components/Buscador.jsx';
 import ResultadosBusqueda from './components/ResultadosBusqueda.jsx';
+import Header from './components/Header.jsx';
 
 /*api key ==> db181fc5219290173c2bab7820f37e39*/
 
@@ -17,16 +18,9 @@ function App(props) {
 */
     return (
         <div className="App">
-            <header>
-
-            </header>
+            <Header/>
             {props.state.ViendoInicio &&
-            <div className="inicio">
-                <div className="buscador">
-                    <Buscador />
-                </div>
-                
-            </div>
+            <Inicio/>
             }
             {props.state.ViendoBusqueda &&
             <div className="resultados-busqueda">
@@ -43,7 +37,7 @@ function App(props) {
 }
 
 const traerEstado = (state) => ({
-  state: state,
+    state: state,
 });
 
 

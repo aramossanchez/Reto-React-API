@@ -60,3 +60,23 @@ export const viendoPeliculaFalse = (dispatch) => () =>{
         type:'VIENDO_PELICULA_FALSE',
     })
 };
+
+export const guardarGenerosEnEstado = (dispatch) => (generos) =>{
+    dispatch({
+        type:'GUARDAR_GENEROS_PELICULAS',
+        generos: generos,
+    })
+};
+
+export const verBotonVolverTrue = (dispatch) => () =>{
+    dispatch({
+        type:'VER_BOTON_VOLVER_TRUE',
+    })
+};
+
+export const verBotonVolverFalse = (dispatch) => () =>{
+    dispatch({
+        type:'VER_BOTON_VOLVER_FALSE',
+    })
+};
+
