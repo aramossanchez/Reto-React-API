@@ -1,36 +1,127 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
 .App {
+    font-family: 'Rubik', sans-serif;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     color:#16193B;
-    min-height: 100vh;
     background-color: #7FB2F0;
 }
 
 header{
-    position: relative;
     height: 5vh;
-    background-color: #35478C;
+    background-color: #35468c;
     width: 100%;
-    img{
-        height: 100%;
+}
+
+.contenedor-header{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 5vh;
+    .contenedor-busqueda-header{
+        width: 100%;
+        display: flex;
+        justify-self: flex-end;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .busqueda-header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color:white;
+        padding: 0 1em;
+        height: 5vh;
+        transition: 0.3s;
     }
 }
 
-header img[alt="Volver"]{
-    position: absolute;
-    left: 1em;
+.contenedor-imagen-buscador-header img{
+    height: 5vh;
+}
+
+.busqueda-header:hover{
+    background-color: white;
+    color: #35468c;
+    cursor: pointer;
 }
 
 header img:hover{
     cursor: pointer;
+    filter: brightness(0.8);
 }
 
+.mostrando-busqueda-header{
+    display: flex;
+    flex-direction: row;
+    background-color: #ADD5F7;
+    width: 100%;
+    position: absolute;
+    top:5vh;
+    z-index: 4;
+    overflow-x: scroll;
+    img{
+        transition: 0.5s;
+        height: 32vh;
+        margin: 0.5em;
+        box-shadow: 4px 4px 8px #35478C;
+    }
+}
 
+.mostrando-busqueda-header::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.mostrando-busqueda-header::-webkit-scrollbar:vertical {
+    width:5px;
+}
+
+.mostrando-busqueda-header::-webkit-scrollbar-button:increment,.mostrando-busqueda-header::-webkit-scrollbar-button {
+    display: none;
+} 
+
+.mostrando-busqueda-header::-webkit-scrollbar:horizontal {
+    height: 7.5px;
+}
+
+.mostrando-busqueda-header::-webkit-scrollbar-thumb {
+    background-color: #35468cbd;
+    border-radius: 20px;
+    border: 2px solid #35478C;
+}
+
+.mostrando-busqueda-header::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+
+.mostrando-busqueda-header img:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.boton-cerrar-busquedas{
+    width: 100%;
+    background-color: #35468c62;
+    height: 5vh;
+    position: fixed;
+    top:5vh;
+    right: 10;
+    z-index: 5;
+    font-size: 200%;
+    transition: 0.25s;
+}
+
+.boton-cerrar-busquedas:hover{
+    cursor: pointer;
+    background-color: #35468cab;
+}
 
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -44,111 +135,88 @@ INICIO
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     height: 95vh;
     width: 100%;
     position: relative;
-}
-
-.inicio img{
-    position: absolute;
-    top:-40vh;
-    -webkit-transform:rotate(2.5deg);
-    -moz-transform:rotate(2.5deg); 
-    -o-transform:rotate(2.5deg);
-    height: 80vh;
-    animation-duration: 8s;
-    animation-name: moviendo;
-    animation-iteration-count: infinite;
-}
-
-.inicio img[alt="Cuerda-izq"]{
-    left:15%;
-}
-
-.inicio img[alt="Cuerda-der"]{
-    left:45%;
-}
-
-@keyframes moviendo {
-    from {
-        -webkit-transform:rotate(2.5deg);
-        -moz-transform:rotate(2.5deg); 
-        -o-transform:rotate(2.5deg);
-    }
-
-    50%{
-        -webkit-transform:rotate(-2.5deg);
-        -moz-transform:rotate(-2.5deg); 
-        -o-transform:rotate(-2.5deg);
-    }
-
-    to {
-        -webkit-transform:rotate(2.5deg);
-        -moz-transform:rotate(2.5deg); 
-        -o-transform:rotate(2.5deg);
-    }
+    background-image: url('./images/fondo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .buscador{
+    position: relative;
+    top: 10vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    background-color: #ADD5F7;
-    border-radius: 4em;
-    width: 50%;
-    height: 20vh;
-    animation-duration: 8s;
-    animation-name: colgando;
-    animation-iteration-count: infinite;
-    position: relative;
-    left: -5em;
+    text-align: center;
+    color:white;
+    width: 100%;
+    height: 40vh;
+    font-size: 150%;
 }
 
-.buscador a{
-    color: #16193B;
-}
-
-.buscador a:visited{
-    color: #16193B;
-}
-
-.buscador a:hover{
-    color: #16193B;
-}
-
-@keyframes colgando {
-    from {
-        left: -1em;
-    }
-
-    50%{
-        left: 1em;
-    }
-
-    to {
-        left: -1em;
-    }
+.buscador img{
+    width: 17%;
 }
 
 .titulo-buscador{
-    padding-bottom: 0.75em;
+    padding: 0.75em ;
     text-align: center;
-    font-size: 180%;
+    font-size: 200%;
     font-weight: bold;
+    div{
+        padding-bottom: 0.5em;
+    }
+}
+
+.eleccion-buscador{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    div{
+        padding:0.5em 1.5em;
+        margin: 0 0.5em;
+        background-color: #35468c;
+        color:#7FB2F0;
+        border-radius: 15px 15px 0 0;
+        transition: 0.5s;
+    }
+}
+
+.eleccion-buscador div:hover{
+    cursor: pointer;
 }
 
 .contenedor-input{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-right: 0.75em;
     input{
         all: unset;
         border-radius: 2em;
         padding: 0.5em;
-        width: 80%;
+        width: 90%;
         text-align: left;
         opacity: 0.8;
         color: #ADD5F7;
         background-color: #16193B;
     }
+    div{
+        position: absolute;
+        background-color: #16193B;
+        color: #ADD5F7;
+        border-radius: 2em;
+        padding: 0.5em;
+        right: 5%;
+    }
+}
+
+.contenedor-input div:hover{
+    cursor: pointer;
 }
 
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -165,6 +233,12 @@ RESULTADOS DE BUSQUEDA
     width: 50%;
 }
 
+.busqueda-sin-resultado{
+    padding: 5vh;
+    color: white;
+    font-size: 200%;
+}
+
 .contenedor-busquedas{
     display: flex;
     flex-direction: column;
@@ -174,7 +248,7 @@ RESULTADOS DE BUSQUEDA
     color: #16193B;
 }
 
-.busqueda-peliculas-individual{
+.busqueda-individual{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -193,7 +267,7 @@ RESULTADOS DE BUSQUEDA
     position: relative;
 }
 
-.busqueda-peliculas-individual:hover{
+.busqueda-individual:hover{
     position: relative;
     right:-3px;
     box-shadow: 3px 10px 10px #16193B;
@@ -223,7 +297,7 @@ RESULTADOS DE BUSQUEDA
     width: 86.5%;
 }
 
-.busqueda-titulo-pelicula{
+.busqueda-titulo{
     padding:0 1em 0.25em 1em;
     font-weight: bold;
 }
@@ -258,18 +332,19 @@ RESULTADOS DE BUSQUEDA
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-VER DATOS PELICULA
+VER DATOS
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
-.viendo-pelicula{
+.viendo-datos{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
     height: 70vh;
 }
-.datos-pelicula{
+
+.datos{
     position: relative;
     display: flex;
     flex-direction: row;
@@ -282,20 +357,35 @@ VER DATOS PELICULA
     color: #ADD5F7;
     background-color: #16193B;
     width: 100%;
+    height: 100%;
+}
+
+.datos img[alt="Volver"]{
+    z-index: 4;
+    height: 5vh;
+    position: absolute;
+    top: 0.5em;
+    left: 0.5em;
+}
+
+.datos img[alt="Volver"]:hover{
+    cursor: pointer;
+    filter: brightness(0.8);
 }
 
 .fondo-caratula-pelicula{
     position: absolute;
+    top:0;
     left:0;
     width: 100%;
-    height: 69vh;
+    height: 100%;
     z-index: 3;
     opacity: 0.1;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.contenedor-imagen-datos-pelicula{
+.contenedor-imagen-datos{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -303,11 +393,11 @@ VER DATOS PELICULA
     width: 20%;
 }
 
-.contenedor-imagen-datos-pelicula img{
+.contenedor-imagen-datos img{
     width: 100%;
 }
 
-.contenedor-informacion-datos-pelicula{
+.contenedor-informacion-datos{
     position: relative;
     display: flex;
     flex-direction: column;
@@ -357,4 +447,65 @@ VER DATOS PELICULA
 
 .pelicula-popular img{
     width: 50%;
+}
+
+.casting{
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    img{
+        width: 15vh;
+        padding: 0.5em;        
+    }
+}
+
+.casting::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.casting::-webkit-scrollbar:vertical {
+    width:5px;
+}
+
+.casting::-webkit-scrollbar-button:increment,.casting::-webkit-scrollbar-button {
+    display: none;
+} 
+
+.casting::-webkit-scrollbar:horizontal {
+    height: 7.5px;
+}
+
+.casting::-webkit-scrollbar-thumb {
+    background-color: #35468cbd;
+    border-radius: 20px;
+    border: 2px solid #35478C;
+}
+
+.casting::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+
+.titulo-casting{
+    font-size: 300%;
+    color: white;
+    text-align: left;
+    padding: 0 0.5em;
+}
+
+.datos-actores{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    margin: 0.5em;
+    border-radius: 3px;
+    box-shadow: 4px 4px 8px #35478C;
+}
+
+.nombres{
+    text-align: left;
+    width: 15vh;
+    padding: 0.25em;  
+    span{
+        font-weight: bold;
+    }
 }

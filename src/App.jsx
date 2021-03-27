@@ -1,24 +1,41 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './App.scss';
-import axios from 'axios';
-import { guardarPeliculaEnEstado } from './redux/actions';
 import Inicio from './components/Inicio.jsx';
-import VerDatosPelicula from './components/verDatosPelicula.jsx';
+import VerDatos from './components/VerDatos.jsx';
 import ResultadosBusqueda from './components/ResultadosBusqueda.jsx';
 import Header from './components/Header.jsx';
+import MasValoradas from './components/MasValoradas.jsx';
+import MasPopulares from './components/MasPopulares.jsx';
+import ActualmenteEmitiendose from './components/ActualmenteEmitiendose.jsx';
+import ProximamenteEnCines from './components/ProximamenteEnCines.jsx';
+import VerCasting from './components/VerCasting.jsx';
 
 /*api key ==> db181fc5219290173c2bab7820f37e39*/
 
 function App(props) {
-  /*
-    React.useEffect(()=>{
-        localStorage.setItem('estado',JSON.stringify(props.state));
-    },[props.state]);
-*/
+
+    const h = window.outerHeight;
+
+    const estilo = {
+        minHeight: h,
+    }
+    
     return (
-        <div className="App">
+        <div className="App" style={estilo}>
             <Header/>
+            {props.state.VerPeliculasProximamente &&
+                <ProximamenteEnCines/>
+            }
+            {props.state.VerActualmente &&
+                <ActualmenteEmitiendose/>
+            }
+            {props.state.VerMasPopulares &&
+                <MasPopulares/>
+            }
+            {props.state.VerMasValoradas &&
+                <MasValoradas/>
+            }
             {props.state.ViendoInicio &&
             <Inicio/>
             }
@@ -27,9 +44,10 @@ function App(props) {
                 <ResultadosBusqueda />
             </div>
             }
-            {props.state.ViendoPelicula &&
-            <div className="viendo-pelicula">
-                <VerDatosPelicula />
+            {props.state.ViendoDatos &&
+            <div className="viendo-datos">
+                <VerDatos/>
+                <VerCasting/>
             </div>
             }
         </div>

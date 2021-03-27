@@ -1,21 +1,51 @@
-export const guardarPeliculaEnEstado = (dispatch) => (datosPelicula) =>{
+export const buscarPeliculasTrue = (dispatch) => () =>{
     dispatch({
-        type:'GUARDAR_PELICULA_EN_ESTADO',
-        datosPelicula: datosPelicula,
+        type:'BUSCAR_PELICULAS_TRUE',
     })
 };
 
-export const guardarPopularesEnEstado = (dispatch) => (datosPelicula) =>{
+export const buscarPeliculasFalse = (dispatch) => () =>{
     dispatch({
-        type:'GUARDAR_POPULARES_EN_ESTADO',
-        datosPelicula: datosPelicula,
+        type:'BUSCAR_PELICULAS_FALSE',
     })
 };
 
-export const guardarBusquedaEnEstado = (dispatch) => (datosPelicula) =>{
+export const buscarSeriesTrue = (dispatch) => () =>{
+    dispatch({
+        type:'BUSCAR_SERIES_TRUE',
+    })
+};
+
+export const buscarSeriesFalse = (dispatch) => () =>{
+    dispatch({
+        type:'BUSCAR_SERIES_FALSE',
+    })
+};
+
+export const guardarDatosEnEstado = (dispatch) => (datos) =>{
+    dispatch({
+        type:'GUARDAR_DATOS_EN_ESTADO',
+        datos: datos,
+    })
+};
+
+export const guardarCastingEnEstado = (dispatch) => (datos) =>{
+    dispatch({
+        type:'GUARDAR_CASTING_EN_ESTADO',
+        datos: datos,
+    })
+};
+
+export const borrarCastingDeEstado = (dispatch) => () =>{
+    dispatch({
+        type:'BORRAR_CASTING_DE_ESTADO',
+    })
+};
+
+export const guardarBusquedaEnEstado = (dispatch) => (datos) =>{
     dispatch({
         type:'GUARDAR_BUSQUEDA_EN_ESTADO',
-        datosPelicula: datosPelicula,
+        datos: datos,
     })
 };
 
@@ -49,21 +79,21 @@ export const viendoBusquedaFalse = (dispatch) => () =>{
     })
 };
 
-export const viendoPeliculaTrue = (dispatch) => () =>{
+export const viendoDatosTrue = (dispatch) => () =>{
     dispatch({
-        type:'VIENDO_PELICULA_TRUE',
+        type:'VIENDO_DATOS_TRUE',
     })
 };
 
-export const viendoPeliculaFalse = (dispatch) => () =>{
+export const viendoDatosFalse = (dispatch) => () =>{
     dispatch({
-        type:'VIENDO_PELICULA_FALSE',
+        type:'VIENDO_DATOS_FALSE',
     })
 };
 
 export const guardarGenerosEnEstado = (dispatch) => (generos) =>{
     dispatch({
-        type:'GUARDAR_GENEROS_PELICULAS',
+        type:'GUARDAR_GENEROS',
         generos: generos,
     })
 };
@@ -77,6 +107,114 @@ export const verBotonVolverTrue = (dispatch) => () =>{
 export const verBotonVolverFalse = (dispatch) => () =>{
     dispatch({
         type:'VER_BOTON_VOLVER_FALSE',
+    })
+};
+
+//MAS VALORADAS///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+export const verMasValoradasTrue = (dispatch) => () =>{
+    dispatch({
+        type:'VER_MAS_VALORADAS_TRUE',
+    })
+};
+
+export const verMasValoradasFalse = (dispatch) => () =>{
+    dispatch({
+        type:'VER_MAS_VALORADAS_FALSE',
+    })
+};
+
+export const guardarMasValoradasEstado = (dispatch) => (datos) =>{
+    dispatch({
+        type:'GUARDA_MAS_VALORADAS',
+        datos: datos,
+    })
+};
+
+export const borrarMasValoradasFalse = (dispatch) => () =>{
+    dispatch({
+        type:'BORRAR_MAS_VALORADAS',
+    })
+};
+
+//MAS POPULARES///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+export const verMasPopularesTrue = (dispatch) => () =>{
+    dispatch({
+        type:'VER_MAS_POPULARES_TRUE',
+    })
+};
+
+export const verMasPopularesFalse = (dispatch) => () =>{
+    dispatch({
+        type:'VER_MAS_POPULARES_FALSE',
+    })
+};
+
+export const guardarMasPopularesEstado = (dispatch) => (datos) =>{
+    dispatch({
+        type:'GUARDA_MAS_POPULARES',
+        datos: datos,
+    })
+};
+
+export const borrarMasPopularesFalse = (dispatch) => () =>{
+    dispatch({
+        type:'BORRAR_MAS_POPULARES',
+    })
+};
+
+//ACTUALMENTE///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+export const verActualmenteTrue = (dispatch) => () =>{
+    dispatch({
+        type:'VER_ACTUALMENTE_TRUE',
+    })
+};
+
+export const verActualmenteFalse = (dispatch) => () =>{
+    dispatch({
+        type:'VER_ACTUALMENTE_FALSE',
+    })
+};
+
+export const guardarActualmenteEstado = (dispatch) => (datos) =>{
+    dispatch({
+        type:'GUARDA_ACTUALMENTE',
+        datos: datos,
+    })
+};
+
+export const borrarActualmenteFalse = (dispatch) => () =>{
+    dispatch({
+        type:'BORRAR_ACTUALMENTE',
+    })
+};
+
+//PROXIMAMENTE EN CINES///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+export const verPeliculasProximamenteTrue = (dispatch) => () =>{
+    dispatch({
+        type:'VER_PELICULAS_PROXIMAMENTE_TRUE',
+    })
+};
+
+export const verPeliculasProximamenteFalse = (dispatch) => () =>{
+    dispatch({
+        type:'VER_PELICULAS_PROXIMAMENTE_FALSE',
+    })
+};
+
+export const guardarPeliculasProximamenteEstado = (dispatch) => (datosPelicula) =>{
+    dispatch({
+        type:'GUARDA_PELICULAS_PROXIMAMENTE',
+        datosPelicula: datosPelicula,
+    })
+};
+
+export const borrarPeliculasProximamenteFalse = (dispatch) => () =>{
+    dispatch({
+        type:'BORRAR_PELICULAS_PROXIMAMENTE',
     })
 };
 

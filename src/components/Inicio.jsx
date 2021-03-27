@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import '../App.scss';
 import Buscador from './Buscador.jsx';
-import cuerda from '../images/cuerda.png';
 import axios from 'axios';
 import { guardarGenerosEnEstado } from '../redux/actions';
 
@@ -11,16 +10,22 @@ import { guardarGenerosEnEstado } from '../redux/actions';
 function Inicio(props) {
 
     React.useEffect(()=>{
-        axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=db181fc5219290173c2bab7820f37e39&language=es`)
+        if(props.state.Peliculas){
+            axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=db181fc5219290173c2bab7820f37e39&language=es`)
             .then(res => {
                 props.GuardamosLosGenerosDePeliculasEnEstado(res.data.genres);
             });
+        }
+        if(props.state.Series){
+            axios.get(`https://api.themoviedb.org/3/genre/tv/list?api_key=db181fc5219290173c2bab7820f37e39&language=es`)
+            .then(res => {
+                props.GuardamosLosGenerosDePeliculasEnEstado(res.data.genres);
+            });
+        }
     })
 
     return (
         <div className="inicio">
-            <img src={cuerda} alt="Cuerda-izq"/>
-            <img src={cuerda} alt="Cuerda-der"/>
             <div className="buscador">
                 <Buscador />
             </div>
