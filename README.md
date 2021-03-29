@@ -59,44 +59,50 @@ _Sustituimos las carpetas "src" y "public" del directorio donde acabamos de crea
 
 ## -FUNCIONAMIENTO DE LA APLICACION
 
-**Todos los cambios que realices en la aplicación se guardarán automaticamente en tu navegador, por lo que nunca perderás los datos guardados (puedes actualizar la página, cerrar la pestaña en donde está abierta la aplicación e incluso cerrar el navegador)**
+**PODEMOS BUSCAR TANTO PELICULAS COMO SERIES**
 
-_Para organizar y gestionar las tareas, uso Tableros, Listas y Tarjetas:_
+_La aplicación nos permite buscar por título, y en esa búsqueda nos mostrará:_
 
-**TABLEROS**
+* Nombre
+* Nombre original
+* Género
+* Fragmento de sinopsis
+* Popularidad
 
-Es la forma básica de presentar los datos. En ellos es donde se crearán las listas y las tarjetas.
-Cada tablero es independiente de los demás.
-Los tableros permiten:
-* Cambiar el nombre
-* Elegir que tablero mostrar entre los que tenemos creados
-* Cambiar la imagen de fondo
-* Borrar tableros (siempre que no sea el tablero activo)
-* Crear tableros nuevos
-* Crear listas en ellos
+_Podemos pulsar en cualquiera de los elementos que nos muestra la búsqueda, y podremos ver la siguiente información:_
 
-**LISTAS**
+* Nombre
+* Nombre original
+* Fecha de estreno
+* Género
+* Sinopsis completa
+* Puntuación
+* Cantidad de votos
+* Casting que participó
 
-Es la forma en la que agrupamos las tarjetas dentro de cada tablero. Podemos agregar tantas listas como queramos en nuestros tableros.
-Las listas permiten:
-* Cambiar el nombre
-* Añadir tarjetas en ellas
-* Copiar la lista y todo su contenido
-* Cambiar la lista de posición
-* Borrar la lista
+_También podremos acceder a búsquedas ya predeterminadas, en el header de la aplicación:_
 
-**TARJETAS**
+**PELICULAS**
 
-Es como denominamos a cada tarea. Las tarjetas se crean en las listas.
-Las tarjetas permiten:
-* Cambiar el nombre
-* Cambiar la tarjeta de posición en la lista en la que está creada
-* Cambiar la tarjeta de lista
-* Borrar la tarjeta
-* Añadir descripción
-* Cambiar su color
+_En el caso de las películas, podemos acceder a las siguientes búsquedas predeterminadas:_
 
-**YA SOLO FALTA QUE EXPLORES POR TODOS LOS BOTONES Y RINCONES DE LA APLICACIÓN PARA DESCUBRIR TODO LO QUE PUEDES HACER**
+* Próximamente en cines
+* Películas actualmente en cines
+* Películas más populares
+* Películas más valoradas
+
+**SERIES**
+
+_En el caso de las series, podemos acceder a las siguientes búsquedas predeterminadas:_
+
+* Series emitiéndose actualmente
+* Series más populares
+* Series más valoradas
+
+**NAVEGACIÓN**
+ * Desde cualquier parte de la APP (que no sea la pantalla de inicio) podrás acceder al buscador (icono de casa en el header de la APP)
+ * Cuando haces una búsqueda desde el buscador y ves los detalles de algún resultado de la búsqueda pulsando en él, puedes acceder de nuevo a los resultados de la búsqueda pulsando la fecha blanca que aparece en la parte superior izquierda de la APP
+ * Puedes cerrar las búsquedas predeterminadas pulsando la flecha negra que aparece en los resultados mostrados en esas búsquedas
 
 ## -OBSERVACIONES FINALES
-Indicar, ya para finalizar, que ha sido el proyecto más entretenido y desafiante de todos los que se me han propuesto en Geeks Hubs Academy hasta la fecha. Ha sido apasionante ir desarrollando paso a paso esta aplicación, e ir descubriendo poco a poco la potencia de react.
+Reto muy interesante de desarrollar, ya que se profundiza en el conocimiento y uso de la programación asíncrona así como en el funcionamiento de las API.
